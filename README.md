@@ -1,7 +1,7 @@
 # loggers : Golang Abstract Loggers
 loggers define an abstract and common logging interface in three flavors.
 
-[![GoDoc](https://godoc.org/gopkg.in/birkirb/loggers.v1?status.svg)](https://godoc.org/gopkg.in/birkirb/loggers.v1)
+[![GoDoc](https://godoc.org/github.com/Vivino/go-loggers?status.svg)](https://godoc.org/github.com/Vivino/go-loggers)
 [![Build Status](https://travis-ci.org/birkirb/loggers.svg?branch=master)](http://travis-ci.org/birkirb/loggers)
 
 ## Inspiration
@@ -31,7 +31,7 @@ A superset of Advanced, adds contextual logging, such that lines can have a numb
 
 ## Installation
 
-    go get gopkg.in/birkirb/loggers.v1
+    go get github.com/Vivino/go-loggers
 
 ## Usage
 
@@ -40,7 +40,7 @@ You can choose between declaring one of the three interfaces above that best sui
 ### Direct
 
 You can use the loggers interface as a drop in replacement for the standard library logger.
-Just change your import statement from `"log"` to `"gopkg.in/birkirb/loggers.v1/log"`.
+Just change your import statement from `"log"` to `"github.com/Vivino/go-loggers/log"`.
 It should work just the same and you can make use of advanced and contextual methods only if you so decide.
 You can then easily switch out the log package implementation later with your own logger as long as it implements the Contextual interface.
 
@@ -58,7 +58,7 @@ Declare your own project logging interface.
 import (
     "log"
 
-    "gopkg.in/birkirb/loggers.v1"
+    "github.com/Vivino/go-loggers"
 )
 
 var Logger loggers.Standard
@@ -76,8 +76,8 @@ Instead of the using the Standard logger as above, we could use the standard log
 
 ```Go
 import (
-    "gopkg.in/birkirb/loggers.v1"
-    "gopkg.in/birkirb/loggers.v1/mappers/stdlib"
+    "github.com/Vivino/go-loggers"
+    "github.com/Vivino/go-loggers/mappers/stdlib"
 )
 
 var Logger loggers.Advanced

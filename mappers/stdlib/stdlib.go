@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"gopkg.in/birkirb/loggers.v1"
-	"gopkg.in/birkirb/loggers.v1/mappers"
+	"github.com/Vivino/go-loggers"
+	"github.com/Vivino/go-loggers/mappers"
 )
 
 // goLog maps the standard log package logger to an Advanced log interface.
@@ -72,7 +72,7 @@ func (l *goLog) WithFields(fields ...interface{}) loggers.Advanced {
 		s = append(s, fmt.Sprint(key, "=", value))
 	}
 
-	r := gologPostfixLogger{l, "["+strings.Join(s, ", ")+"]"}
+	r := gologPostfixLogger{l, "[" + strings.Join(s, ", ") + "]"}
 	return mappers.NewAdvancedMap(&r)
 }
 

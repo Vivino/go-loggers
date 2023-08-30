@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"gopkg.in/birkirb/loggers.v1"
-	"gopkg.in/birkirb/loggers.v1/mappers"
+	"github.com/Vivino/go-loggers"
+	"github.com/Vivino/go-loggers/mappers"
 )
 
 // goTestLog maps the testing logger to an Advanced log interface.
@@ -67,7 +67,7 @@ func (l *goTestLog) WithFields(fields ...interface{}) loggers.Advanced {
 		s = append(s, fmt.Sprint(key, "=", value))
 	}
 
-	r := goTestLogPostfixLogger{l, "["+strings.Join(s, ", ")+"]"}
+	r := goTestLogPostfixLogger{l, "[" + strings.Join(s, ", ") + "]"}
 	return mappers.NewAdvancedMapTesting(&r, l.logger)
 }
 

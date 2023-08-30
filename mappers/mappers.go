@@ -1,6 +1,6 @@
 package mappers
 
-import "gopkg.in/birkirb/loggers.v1"
+import "github.com/Vivino/go-loggers"
 
 type (
 	// Level indicates a specific log level.
